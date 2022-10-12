@@ -1,17 +1,17 @@
-const neo4j = require('neo4j-driver');
-
-const uri = 'neo4j+s://2fed88f9.databases.neo4j.io';
-const user = 'neo4j';
-const password = 'pw03RNrSSqzOkWj2r2MUK4_kVBjShabA_i8fCv_StCs';
+const mongoose = require("mongoose");
 
 const connectDB = async() => {
-
-    
-    // To learn more about the driver: https://neo4j.com/docs/javascript-manual/current/client-applications/#js-driver-driver-object
-    const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
-    const session = driver.session({ database: 'neo4j' });
-
-   
+// Set up default mongoose connection
+const mongoDB = "mongodb+srv://haniket:1234567Hy9@cluster0.unpeukk.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect("mongodb+srv://haniket:1234567Hy9@cluster0.unpeukk.mongodb.net/?retryWrites=true&w=majority", {
+  useNewUrlParser: "true",
+})
+mongoose.connection.on("error", err => {
+  console.log("err", err)
+})
+mongoose.connection.on("connected", (err, res) => {
+  console.log("mongoose is connected")
+}) 
 }
 
 module.exports = connectDB;

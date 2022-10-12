@@ -1,14 +1,11 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import { ShowEmp } from "./components/showEmp";
-import { CreateEmp } from "./components/createEmp";
-import "./App.scss";
+import  Home  from "./components/home";
 
 function App() {
     return (
         <div className="app-contents">
             <BrowserRouter>
-                <Route exact path="/" component={ShowEmp} />
-                <Route path="/create-emp" component={CreateEmp} />
+                <Route exact path="/" component={Home} />
             </BrowserRouter>
         </div>
     );
