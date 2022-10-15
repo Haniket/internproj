@@ -19,7 +19,9 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('server is active'));
 
 // use routes
-app.use("/api/card", route);
+app.use("/api/image", route);
+
+
 
 // setting up port
 

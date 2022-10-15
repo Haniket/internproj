@@ -1,19 +1,15 @@
 const mongoose = require("mongoose");
 
- const userSchema = new mongoose.Schema(
+ const imageSchema = new mongoose.Schema(
   {
    
      name: {
        type: String,
-       trim: true,
      },
-   
-     following: { 
-     type: Array 
-     }, 
-     followers: { 
-     type: Array 
-     },
+     img: {
+      type: String,
+      required: true,
+    },
    
    },
    {
@@ -21,5 +17,5 @@ const mongoose = require("mongoose");
    }
  );
 
- const User = mongoose.model("User", userSchema);
-module.exports = User;
+ const Image = mongoose.model("Image", imageSchema);
+module.exports = Image;
